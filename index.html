@@ -1,0 +1,757 @@
+
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#142b40">
+  <meta name="description" content="Associação dos Estudantes Cabo-Verdianos no Porto. União, integração e oportunidades.">
+  <title>AECP | Associação dos Estudantes Cabo-Verdianos no Porto</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #142b40;
+      --blue: #315b70;
+      --teal: #4c8294;
+      --gold: #b69a64;
+      --white: #ffffff;
+      --cream: #f7f7f4;
+      --text: #263746;
+      --muted: #77838c;
+      --border: #e8ecee;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      color: var(--text);
+      background: var(--white);
+      line-height: 1.7;
+    }
+
+    h1, h2, h3, .brand {
+      font-family: 'Manrope', sans-serif;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1160px, 90%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      height: 88px;
+      display: flex;
+      align-items: center;
+      background: rgba(255,255,255,.97);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      color: var(--navy);
+      font-size: 27px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .brand small {
+      display: block;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 8px;
+      letter-spacing: 1.4px;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 27px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--navy);
+    }
+
+    .nav-links a:hover {
+      color: var(--teal);
+    }
+
+    .nav-button {
+      background: var(--navy);
+      color: white !important;
+      padding: 12px 19px;
+      border-radius: 4px;
+    }
+
+    .menu-toggle {
+      display: none;
+      border: 0;
+      background: none;
+      color: var(--navy);
+      font-size: 27px;
+      cursor: pointer;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      color: white;
+      background:
+        linear-gradient(90deg, rgba(12,30,46,.88), rgba(12,30,46,.30)),
+        url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=85')
+        center/cover;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 100px 0;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 1.13;
+      font-weight: 700;
+      margin-bottom: 25px;
+    }
+
+    .hero p {
+      max-width: 540px;
+      color: #e0e7eb;
+      font-size: 16px;
+      margin-bottom: 36px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 25px;
+      background: var(--gold);
+      color: var(--navy);
+      font-size: 12px;
+      font-weight: 700;
+      border-radius: 3px;
+      transition: .3s;
+    }
+
+    .btn:hover {
+      background: white;
+      transform: translateY(-3px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      border: 1px solid rgba(255,255,255,.7);
+      color: white;
+      margin-left: 10px;
+    }
+
+    /* GENERAL SECTIONS */
+
+    section {
+      padding: 105px 0;
+    }
+
+    .section-label {
+      color: var(--teal);
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 13px;
+    }
+
+    .section-title {
+      color: var(--navy);
+      font-size: clamp(30px, 4vw, 43px);
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+
+    .section-description {
+      max-width: 620px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    /* ASSOCIATION */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 75px;
+    }
+
+    .about-image {
+      height: 430px;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 3px;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+
+    .text-link {
+      display: inline-block;
+      margin-top: 15px;
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 13px;
+      border-bottom: 1px solid var(--teal);
+    }
+
+    /* EVENTS */
+
+    .events {
+      background: var(--cream);
+    }
+
+    .section-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin-bottom: 45px;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .event-card {
+      background: white;
+      border: 1px solid var(--border);
+      padding: 30px;
+      min-height: 225px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .event-card .tag {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      font-weight: 700;
+    }
+
+    .event-card h3 {
+      color: var(--navy);
+      font-size: 20px;
+      margin: 18px 0 10px;
+    }
+
+    .event-card p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .event-card a {
+      color: var(--teal);
+      font-weight: 700;
+      font-size: 12px;
+      margin-top: 20px;
+    }
+
+    /* STUDENT SUPPORT */
+
+    .support-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 35px;
+      margin-top: 50px;
+    }
+
+    .support-card {
+      padding: 30px 25px;
+      border: 1px solid var(--border);
+      transition: .3s;
+    }
+
+    .support-card:hover {
+      border-color: var(--teal);
+      transform: translateY(-5px);
+    }
+
+    .support-number {
+      font-family: 'Manrope', sans-serif;
+      color: var(--gold);
+      font-size: 27px;
+      font-weight: 800;
+    }
+
+    .support-card h3 {
+      color: var(--navy);
+      font-size: 18px;
+      margin: 15px 0 10px;
+    }
+
+    .support-card p {
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    /* ORGANS */
+
+    .organs {
+      background: var(--navy);
+      color: white;
+      text-align: center;
+    }
+
+    .organs .section-title {
+      color: white;
+    }
+
+    .organs .section-description {
+      margin: auto;
+      color: #c3d0d8;
+    }
+
+    .organs-content {
+      margin-top: 40px;
+      padding: 35px;
+      border: 1px solid rgba(255,255,255,.2);
+      max-width: 650px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .organs-content p {
+      color: #c3d0d8;
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACTS */
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .contact-info p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-top: 15px;
+    }
+
+    .contact-detail {
+      margin-top: 25px;
+      color: var(--navy);
+      font-size: 14px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 15px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 16px;
+      border: 1px solid var(--border);
+      font-family: inherit;
+      font-size: 13px;
+      outline: none;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--teal);
+    }
+
+    .contact-form textarea {
+      height: 130px;
+      resize: vertical;
+    }
+
+    .contact-form button {
+      border: none;
+      cursor: pointer;
+      text-align: center;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: #0d2030;
+      color: white;
+      padding: 45px 0;
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 25px;
+    }
+
+    footer p {
+      color: #aebbc4;
+      font-size: 11px;
+    }
+
+    .footer-brand {
+      font-family: 'Manrope', sans-serif;
+      font-size: 25px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width: 850px) {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 88px;
+        left: 0;
+        width: 100%;
+        background: white;
+        padding: 25px 5%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .event-grid,
+      .support-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .hero {
+        min-height: 570px;
+      }
+    }
+
+    @media(max-width: 560px) {
+      section {
+        padding: 75px 0;
+      }
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .hero-content {
+        padding: 75px 0;
+      }
+
+      .btn-outline {
+        margin: 12px 0 0;
+      }
+
+      .event-grid,
+      .support-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading,
+      .footer-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .about-image {
+        height: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#inicio" class="brand">
+        AECP
+        <small>ESTUDANTES CABO-VERDIANOS NO PORTO</small>
+      </a>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+      <nav class="nav-links" id="navLinks">
+        <a href="#inicio">Início</a>
+        <a href="#eventos">Eventos</a>
+        <a href="#orgaos">Órgãos Sociais</a>
+        <a href="#associacao">Associação</a>
+        <a href="#apoio">Apoio ao estudante</a>
+        <a href="#contactos" class="nav-button">Contactos</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="inicio">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow">Cabo Verde · Porto · Comunidade</div>
+          <h1>Uma comunidade.<br>Um futuro.<br>Uma ligação.</h1>
+          <p>
+            Somos a Associação dos Estudantes Cabo-Verdianos no Porto.
+            Uma comunidade que promove a união, a integração e o
+            desenvolvimento dos estudantes.
+          </p>
+          <a href="#associacao" class="btn">CONHECE A AECP</a>
+          <a href="#eventos" class="btn btn-outline">OS NOSSOS EVENTOS</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="associacao">
+      <div class="container about-grid">
+        <div>
+          <img class="about-image"
+            src="https://images.unsplash.com/photo-1523580846011-d3a5bc25702b?auto=format&fit=crop&w=1000&q=85"
+            alt="Estudantes numa universidade">
+        </div>
+
+        <div class="about-text">
+          <div class="section-label">Quem somos</div>
+          <h2 class="section-title">Mais do que uma associação, uma comunidade.</h2>
+          <p>
+            A Associação dos Estudantes Cabo-Verdianos no Porto
+            pretende ser um espaço de união, representação e
+            valorização dos estudantes cabo-verdianos.
+          </p>
+          <p>
+            Trabalhamos para fortalecer os laços entre estudantes,
+            promover a integração académica e social e criar
+            oportunidades de participação e crescimento.
+          </p>
+          <a href="#orgaos" class="text-link">CONHECE A NOSSA ESTRUTURA →</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="events" id="eventos">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <div class="section-label">Participa connosco</div>
+            <h2 class="section-title">Eventos e atividades</h2>
+            <p class="section-description">
+              Momentos de encontro, partilha, cultura e integração
+              da comunidade estudantil cabo-verdiana.
+            </p>
+          </div>
+        </div>
+
+        <div class="event-grid" id="eventGrid">
+          <article class="event-card">
+            <div>
+              <div class="tag">Agenda AECP</div>
+              <h3>Novidades em breve</h3>
+              <p>Estamos a preparar as próximas iniciativas da associação. Fica atento às novidades.</p>
+            </div>
+            <a href="#contactos">SABER MAIS →</a>
+          </article>
+
+          <article class="event-card">
+            <div>
+              <div class="tag">Comunidade</div>
+              <h3>Encontros e integração</h3>
+              <p>Espaços para aproximar estudantes e fortalecer a nossa comunidade.</p>
+            </div>
+            <a href="#contactos">SABER MAIS →</a>
+          </article>
+
+          <article class="event-card">
+            <div>
+              <div class="tag">Cultura</div>
+              <h3>Identidade e cultura</h3>
+              <p>Iniciativas dedicadas à cultura, tradição e identidade cabo-verdiana.</p>
+            </div>
+            <a href="#contactos">SABER MAIS →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="organs" id="orgaos">
+      <div class="container">
+        <div class="section-label">Representação e liderança</div>
+        <h2 class="section-title">Órgãos Sociais</h2>
+        <p class="section-description">
+          Conhece os responsáveis pela representação,
+          organização e desenvolvimento da associação.
+        </p>
+
+        <div class="organs-content">
+          <p>
+            Esta secção será atualizada com a composição oficial
+            dos órgãos sociais e a apresentação dos seus membros.
+          </p>
+          <span style="color:#b69a64;font-size:12px;font-weight:700;">
+            INFORMAÇÃO EM ATUALIZAÇÃO
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section id="apoio">
+      <div class="container">
+        <div class="section-label">Estamos aqui para ajudar</div>
+        <h2 class="section-title">Apoio ao estudante</h2>
+        <p class="section-description">
+          A vida académica envolve desafios. Queremos ajudar
+          os estudantes a encontrar informação e orientação.
+        </p>
+
+        <div class="support-grid">
+          <article class="support-card">
+            <div class="support-number">01</div>
+            <h3>Integração académica</h3>
+            <p>Informações úteis para a adaptação à vida universitária no Porto.</p>
+          </article>
+
+          <article class="support-card">
+            <div class="support-number">02</div>
+            <h3>Informação e orientação</h3>
+            <p>Orientação para encontrar serviços, recursos e entidades de apoio.</p>
+          </article>
+
+          <article class="support-card">
+            <div class="support-number">03</div>
+            <h3>Comunidade estudantil</h3>
+            <p>Promover a partilha de experiências e a ligação entre estudantes.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contactos">
+      <div class="container contact-grid">
+        <div class="contact-info">
+          <div class="section-label">Fala connosco</div>
+          <h2 class="section-title">Estamos mais perto de ti.</h2>
+          <p>
+            Tens alguma questão, proposta ou interesse em colaborar
+            com a associação? Entra em contacto connosco.
+          </p>
+          <div class="contact-detail">
+            <strong>AECP</strong><br>
+            Associação dos Estudantes Cabo-Verdianos no Porto
+          </div>
+          <div class="contact-detail">
+            <strong>Email</strong><br>
+            <span>A divulgar brevemente</span>
+          </div>
+          <div class="contact-detail">
+            <strong>Localização</strong><br>
+            Porto, Portugal
+          </div>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+          <input type="text" placeholder="O teu nome" required>
+          <input type="email" placeholder="O teu email" required>
+          <input type="text" placeholder="Assunto" required>
+          <textarea placeholder="Escreve a tua mensagem..." required></textarea>
+          <button type="submit" class="btn">ENVIAR MENSAGEM</button>
+          <p id="formMessage" style="font-size:12px;color:#77838c;"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-content">
+      <div>
+        <div class="footer-brand">AECP</div>
+        <p>Associação dos Estudantes Cabo-Verdianos no Porto</p>
+      </div>
+      <p>© <span id="year"></span> AECP. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('active');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.textContent = isOpen ? '×' : '☰';
+    });
+
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.textContent = '☰';
+      });
+    });
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      document.getElementById('formMessage').textContent =
+        'O formulário será ativado na próxima fase. Obrigado pelo contacto!';
+    });
+  </script>
+
+</body>
+</html>
