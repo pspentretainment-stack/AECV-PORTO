@@ -24,7 +24,19 @@
       --muted: #77838c;
       --border: #e8ecee;
     }
+/* LOGOTIPO AECP */
 
+.brand {
+  display: flex;
+  align-items: center;
+}
+
+.logo-aecp {
+  width: 76px;
+  height: 76px;
+  object-fit: contain;
+  display: block;
+}
     * {
       margin: 0;
       padding: 0;
@@ -126,7 +138,7 @@
       color: white;
       background:
         linear-gradient(90deg, rgba(12,30,46,.88), rgba(12,30,46,.30)),
-        url('https://images.unsplash.com/photo-1519501025264-65ba15a82390?auto=format&fit=crop&w=2000&q=85')
+        url('https://images.pexels.com/photos/39365629/pexels-photo-39365629.jpeg?cs=srgb')
         center/cover;
     }
 
@@ -524,10 +536,12 @@
 
   <header>
     <div class="container nav">
-      <a href="#inicio" class="brand">
-        AECP
-        <small>ESTUDANTES CABO-VERDIANOS NO PORTO</small>
-      </a>
+     <a href="#inicio" class="brand">
+  <img
+    src="Emblema%20da%20Associa%C3%A7%C3%A3o%20de%20Estudantes%20Cabo-Verdianos.png"
+    alt="Logótipo oficial da AECP"
+    class="logo-aecp">
+</a>
 
       <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
 
