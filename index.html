@@ -539,6 +539,85 @@
   max-width: 100%;
   overflow-x: hidden;
 }
+    
+/* =====================================
+   AECV PORTO — EVENTOS HORIZONTAIS
+===================================== */
+
+#eventos .event-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 3px 22px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+#eventos .event-card {
+  flex: 0 0 340px !important;
+  width: 340px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* =====================================
+   AECV PORTO — APOIO HORIZONTAL
+===================================== */
+
+#apoio .support-grid {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  gap: 20px;
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 10px 3px 22px;
+  margin-top: 35px;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+#apoio .support-card {
+  flex: 0 0 320px !important;
+  width: 320px;
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* BARRA DE DESLIZAMENTO */
+
+#eventos .event-grid::-webkit-scrollbar,
+#apoio .support-grid::-webkit-scrollbar {
+  height: 5px;
+}
+
+#eventos .event-grid::-webkit-scrollbar-thumb,
+#apoio .support-grid::-webkit-scrollbar-thumb {
+  background: var(--teal);
+  border-radius: 10px;
+}
+
+/* TELEMÓVEIS */
+
+@media (max-width: 560px) {
+  #eventos .event-card {
+    flex: 0 0 85% !important;
+    width: 85%;
+  }
+
+  #apoio .support-card {
+    flex: 0 0 85% !important;
+    width: 85%;
+  }
+}
+
   </style>
 </head>
 
@@ -819,11 +898,7 @@
 
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    document.getElementById('contactForm').addEventListener('submit', function(e) {
-      e.preventDefault();
-      document.getElementById('formMessage').textContent =
-        'O formulário será ativado na próxima fase. Obrigado pelo contacto!';
-    });
+
   </script>
 
 </body>
